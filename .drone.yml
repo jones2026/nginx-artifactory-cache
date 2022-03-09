@@ -15,8 +15,17 @@ steps:
     password:
       from_secret: docker_password
     repo: ${DRONE_REPO,,}
-    username:
-      from_secret: docker_username
+    username: jones2026
+
+- name: docker_pushrm
+  image: chko/docker-pushrm
+  environment:
+    DOCKER_USER: jones2026
+    DOCKER_PASS:
+      from_secret: docker_password
+    PUSHRM_TARGET: docker.io/jones2026/nginx-artifactory-cache
+    PUSHRM_DEBUG: 1
+    PUSHRM_FILE: README.md
 
 trigger:
   branch:
