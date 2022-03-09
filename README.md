@@ -1,0 +1,1 @@
+# nginx-artifactory-cache
