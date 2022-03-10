@@ -4,3 +4,6 @@
 
 
 # nginx-artifactory-cache
+
+docker build -t cache .
+docker run --rm -v (pwd)/cache:/data/nginx/cache -p 80:80 -p 443:443 cache
